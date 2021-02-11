@@ -117,6 +117,10 @@ suite('Language server validation', async () => {
     test('Error highlighting', async () => {
         const textForErrorDisplaying: string = '$#%@#';
 
+        console.error('+++ Error highlighting +++ before sleep ');
+        await driverHelper.getDriver().sleep(20000);
+        console.error('+++ Error highlighting +++ after sleep ');
+
         await editor.type(javaFileName, textForErrorDisplaying, 30);
 
         try {
